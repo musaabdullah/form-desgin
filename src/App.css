@@ -1,4 +1,8 @@
-.app {
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* .app {
   display: flex;
   justify-content: center;
 }
@@ -89,8 +93,77 @@ body {
 .social__items a:nth-of-type(3){
    
   color:rgb(80, 80, 211);
+} */
+
+
+.popup-wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  transition: 1s;
+
 }
 
+.popup {
+  background-color: white;
+  position: absolute;
+  top:35%;
+  right: 30%;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 1s;
+}
+.popup input {
+  width: 300px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid rgb(150, 143, 143);
+  outline: none;
+  font-weight: bold;
+}
+.popup .input__search {
+  height: 43px;
+  margin-left: 7px;
+  border-radius: 10px;
+  color:white;
+  background-color: black;
+  outline:none;
+  cursor: pointer;
+  border: 1px solid rgb(150, 143, 143);
+}
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 
+.btn {
+  margin-top: 30px;
+  width: 100px;
+  padding: 5px;
+  color:white;
+  background:black;
+  border:0;
+  outline:none;
+  border-radius: 10px;
+  cursor: pointer;
+} 
+
+.active {
+  display:block;
+}
+
+.disabled {
+  display: none;
+} 
 
 

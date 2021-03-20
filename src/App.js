@@ -1,31 +1,35 @@
+import { AiFillAccountBook } from 'react-icons/ai';
 import './App.css';
-import  * as AI from "react-icons/ai";
+import Form from './components/Form';
+import * as A from 'react-icons/ai';
+import { useState } from 'react';
 function App() {
+
+  const [show, setShow] = useState(false);
+
+  const handlePopup = () => {
+    setShow(!show);
+    console.log(show);
+  }
   return (
     <div className="app">
-             <div className="form">
-               <div className="form__logo">
-                 FEAHTED
+           {/* <Form /> */}
+           <button onClick={() => handlePopup()} >Show</button>
+           <div className={`popup-wrapper ${show ? "active" : "disabled"}`}>
+               <div className="popup">
+                   <div className="popup-content">
+                       <div className="title">
+                         Search
+                       </div>
+                       <div className="content">
+                         {/* The href attribute requires a valid value to be accessible. provide a valid, navigable address as the href value. */}
+                        <input type="text" placeholder="Search"></input>
+                        <button className="input__search">Search</button>
+                       </div>
+                       <button onClick={() => handlePopup()} className="btn">  Close </button>
+                   </div>
                </div>
-               <form>
-                 <input type="text" placeholder="Full Name"/>
-                 <input type="password" placeholder="Password" />
-                 <input type="password" placeholder="Confirm Password"/>
-                 <input type="email" placeholder="Email" />
-                 <button onClick={(e) => {e.preventDefault()}} className="form__btn">Sign Up</button>
-               </form>
-             <div className="form__sign">Have an account?<a href="#">Sign In</a></div>
-             <div className="form__social">
-               <div className="social__title">
-                 or you can sign in with
-               </div>
-               <div className="social__items">
-                 <a href="#"><AI.AiFillGithub/></a>
-                 <a href="#"><AI.AiFillGoogleCircle/></a>
-                 <a href="#"><AI.AiFillFacebook/></a>
-               </div>
-             </div>
-             </div>
+           </div>
     </div>
   );
 }
